@@ -12,7 +12,7 @@ export default function LogIn() {
   return (
     <Paper>
       <Avatar>
-        <PermIdentityIcon/>
+        <PermIdentityIcon />
       </Avatar>
       <form noValidate>
         <TextField
