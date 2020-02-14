@@ -8,7 +8,18 @@ import Link from '@material-ui/core/Link';
 
 export default function LogIn() {
   const preventDefault = event => event.preventDefault();
-
+  
+  const handleLogin= ()=>{
+    let em = document.querySelector('#user').value
+    let pwd = document.querySelector('#password').value
+  
+    if (localStorage.getItem(em) === pwd){
+        localStorage.setItem("isLoggedIn", true);
+    }
+    else{
+        return
+    }
+  }
   return (
     <Paper>
       <Avatar>
@@ -20,7 +31,7 @@ export default function LogIn() {
           margin="normal"
           required
           fullWidth
-          id="email"
+          id="user"
           label="User Name"
           name="username"
           // autoComplete="email"
@@ -42,6 +53,7 @@ export default function LogIn() {
           fullWidth
           variant="contained"
           color="primary"
+          onClick={handleLogin}
         >
           LOGIN
         </Button>
@@ -51,4 +63,5 @@ export default function LogIn() {
       </Link>
     </Paper>
   )
+
 }

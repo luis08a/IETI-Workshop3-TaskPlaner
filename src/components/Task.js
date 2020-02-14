@@ -10,7 +10,9 @@ export class Task extends React.Component {
             <Card variant="outlined">
                 <CardContent>
                     {this.props.description}
+                    <br/>
                     {this.props.status} - {this.props.dueDate}
+                    <br/>
                     {/* {this.props.responsible.name}
                     {this.props.responsible.email} */}
                 </CardContent>
