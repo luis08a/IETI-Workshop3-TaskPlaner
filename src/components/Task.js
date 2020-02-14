@@ -1,20 +1,23 @@
 import React from 'react';
+import { Card, CardActions, CardContent, Button, IconButton } from '@material-ui/core';
 
 export class Task extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        console.log(this.props.responsible);
+        
         return (
-            <div>
-                <p>{this.props.description}</p>
-                <p>{this.props.resposible}</p>
-                <p>{this.props.status}</p>
-                <div>{this.props.dueDate.toString()}</div>
-            </div>
+            <Card variant="outlined">
+                <CardContent>
+                    {this.props.description}
+                    {this.props.status} - {this.props.dueDate}
+                    {/* {this.props.responsible.name}
+                    {this.props.responsible.email} */}
+                </CardContent>
+                <CardActions>
+                    <IconButton size="small">Learn More</IconButton>
+                </CardActions>
+            </Card>
         );
     }
-
 }

@@ -1,27 +1,31 @@
 import React from 'react';
-import {Task} from './Task'
+import { Task } from './Task'
+import { GridList, GridListTile } from '@material-ui/core';
 
-export class TaskList extends React.Component{
-    constructor(props){
-        super(props)
-    }
+import Data from './Data';
 
-    TaskList = () =>{
-        const tasks = this.props.items
-        const listTodo = tasks.map((todo,i) =>
-            <li key={i}>
-               <Task text={todo.text} priority={todo.priority} dueDate={todo.dueDate}/>
-            </li>
+export class TaskList extends React.Component {
+
+    TaskList = () => {
+        const tasks = Data.map((task, i) =>
+            <GridListTile key={i}>
+                <Task 
+                    description={task.description} 
+                    status={task.status} 
+                    resposible={task.responsible}
+                    dueDate={task.dueDate} />
+            </GridListTile>
         )
-        return listTodo;
+        return tasks;
     }
 
-    render(){
-        let tasks = this.Task();
-        return(
-            <ul>
+    render() {
+        let tasks = this.TaskList();
+        return (
+            <GridList cols={1}>
                 {tasks}
-            </ul>
+            </GridList>
         )
     }
 }
+

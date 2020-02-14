@@ -11,7 +11,6 @@ import { Card, CardActionArea, CardActions, CardMedia, CardContent } from '@mate
 import { getThemeProps } from '@material-ui/styles';
 
 function AppDrawer(props) {
-
     const card = () => {
         return (
             <Card >

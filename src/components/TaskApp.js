@@ -5,9 +5,23 @@ export class TaskApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      items: [
+        {
+          "description": "some description text ",
+          "responsible": {
+            "name": "Santiago Carrillo",
+            "email": "sancarbar@gmail"
+          },
+          "status": "ready",
+          "dueDate": 156464645646
+        }
+      ],
       description: '',
-      status: 0,
+      status: '',
+      responsible: {
+        name: '',
+        email: ''
+      },
       dueDate: undefined
     };
     this.handleChange = this.handleChange.bind(this);
